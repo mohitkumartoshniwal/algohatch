@@ -7,6 +7,10 @@ Last updated: 2026-10-11
 Review the research-audited JavaScript storage and complexity fundamentals before designing the
 Array topic or the `DynamicArray<T>` contract.
 
+Future implementation topics use a test-driven learning checkpoint: the agent prepares the
+contract, diagrams, expected complexity, trade-offs, and tests; the owner then writes the concrete
+implementation by hand before agent review and final validation.
+
 No data structure is implemented on `main`. Earlier Queue exploration is preserved separately for
 later reconsideration after its prerequisites are understood.
 
@@ -36,4 +40,5 @@ later reconsideration after its prerequisites are understood.
 ## Next Checkpoint
 
 Review `docs/fundamentals.md` for clarity and correctness. The owner should be able to explain its
-review questions before the Array topic and `DynamicArray<T>` contract begin.
+review questions before the agent prepares the Array topic, `DynamicArray<T>` contract, and failing
+tests for the owner's implementation exercise.

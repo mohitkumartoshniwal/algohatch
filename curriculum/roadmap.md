@@ -5,7 +5,18 @@ abstractions. Implementation remains incremental: complete and review one small 
 starting the next.
 
 Every topic begins with the private research workflow in `.internal/research-notes.md`. Research,
-public documentation, implementation, and owner understanding are separate completion states.
+public documentation, test design, owner implementation, and review are separate completion
+states.
+
+## Topic Workflow
+
+1. Research and define the practical behavior contract.
+2. Prepare the proposed API, diagrams, complexity table, trade-offs, and tests.
+3. Pause with a deliberately incomplete topic branch so the owner can implement the solution by
+   hand. Do not merge this checkpoint into `main`.
+4. Review the owner's implementation against the contract and tests.
+5. Align the documentation and diagrams with the reviewed code, run the full checks, and only then
+   consider the topic complete.
 
 ## Stage 0: Language And Complexity Foundations
 
@@ -37,11 +48,12 @@ Learn in this order:
 6. Why append can be amortized `O(1)`
 7. Typed arrays and fixed-length storage where useful for comparison
 
-Planned implementation: a practical `DynamicArray<T>` with explicit size, capacity, growth,
-indexed access, insertion, removal, iteration, and snapshots.
+Planned owner implementation: a practical `DynamicArray<T>` with explicit size, capacity, growth,
+indexed access, insertion, removal, iteration, and snapshots. The agent first prepares its contract
+and tests without supplying the finished implementation.
 
-Done when: the topic document, implementation, diagrams, correctness rules, trade-offs, and tests
-have been reviewed.
+Done when: the owner-written implementation passes the prepared tests and the topic document,
+diagrams, correctness rules, and trade-offs have been reviewed.
 
 ## Stage 2: Linked Lists
 

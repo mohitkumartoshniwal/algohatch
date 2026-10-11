@@ -71,6 +71,21 @@ research material belongs only under the ignored `.internal` directory.
 - Validate root exports through `tools/validation`.
 - Scale additional tests to the behavior and package surface changed.
 
+## Owner-Implemented Learning Loop
+
+For each new data structure or algorithm, work in two checkpoints on a topic branch:
+
+1. The agent researches the topic and prepares the practical contract, proposed public API,
+   diagrams, expected complexity, trade-offs, and tests.
+2. Stop before writing the concrete production implementation. The tests may intentionally fail
+   at this checkpoint and the branch must not be merged into `main` yet.
+3. The owner writes the implementation by hand as the learning exercise.
+4. The agent reviews the owner's code, explains any issues, runs validation, and updates diagrams
+   or documentation to match the reviewed implementation.
+
+An agent may create contract types and test scaffolding needed to define the exercise, but must not
+provide the finished implementation unless the owner explicitly changes this workflow for a topic.
+
 ## Commands
 
 ```sh
@@ -118,3 +133,4 @@ The next checkpoint is owner review of the fundamentals page, not another implem
    normally need one.
 7. Run `pnpm release:check` before requesting any package release.
 8. Do not publish, push, tag, release, or deploy without explicit owner approval.
+9. Follow the owner-implemented learning loop; do not preempt the owner's implementation exercise.

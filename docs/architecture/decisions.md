@@ -89,6 +89,16 @@ status.
 Rationale: one structure keeps the curriculum understandable and can also guide a short video
 without maintaining separate scripts or video-specific rules.
 
+## Owner-Implemented Learning Checkpoint
+
+Decision: prepare each topic's research, behavior contract, proposed API, diagrams, complexity,
+trade-offs, and tests before the concrete implementation, then pause so the owner can implement it
+by hand. Review and validation follow the owner's implementation.
+
+Rationale: AlgoHatch is both a usable library and a learning project. Tests define a concrete
+exercise while manual implementation gives the owner direct practice. Keeping the incomplete
+checkpoint on a topic branch prevents intentionally failing tests from reaching `main`.
+
 ## Public Implementation Choice
 
 Decision: expose useful implementations under descriptive names and document their expected
