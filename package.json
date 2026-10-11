@@ -1,0 +1,33 @@
+{
+  "name": "algohatch-workspace",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": ">=22.11.0"
+  },
+  "scripts": {
+    "build": "pnpm --filter algohatch build",
+    "check": "pnpm biome:check && pnpm typecheck && pnpm build && pnpm validation:typecheck && pnpm test",
+    "biome:check": "biome check .",
+    "biome:format": "biome check --write .",
+    "changeset": "changeset",
+    "package:check": "node tools/release/validate-package.mjs",
+    "release:check": "pnpm check && pnpm package:check",
+    "typecheck": "pnpm --filter algohatch typecheck",
+    "validation:typecheck": "pnpm --filter algohatch-validation typecheck",
+    "test": "pnpm --filter algohatch test",
+    "version-packages": "changeset version"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.5",
+    "@biomejs/biome": "^2.2.4",
+    "@changesets/cli": "^3.0.3",
+    "@types/node": "^24.7.0",
+    "publint": "^0.3.25",
+    "tsdown": "^0.15.4",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.0"
+  }
+}

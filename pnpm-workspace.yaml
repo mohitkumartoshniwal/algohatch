@@ -1,0 +1,5 @@
+packages:
+  # Public library packages.
+  - "packages/*"
+  # Private development and package-validation projects.
+  - "tools/*"

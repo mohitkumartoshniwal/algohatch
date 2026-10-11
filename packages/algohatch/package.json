@@ -1,0 +1,46 @@
+{
+  "name": "algohatch",
+  "version": "0.0.0",
+  "description": "TypeScript-first data structures and algorithms library.",
+  "keywords": [
+    "algorithms",
+    "data-structures",
+    "typescript",
+    "dsa"
+  ],
+  "type": "module",
+  "license": "MIT",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "module": "./dist/index.js",
+  "scripts": {
+    "build": "tsdown",
+    "prepack": "pnpm build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --pool=threads"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohitkumartoshniwal/algohatch.git"
+  },
+  "homepage": "https://github.com/mohitkumartoshniwal/algohatch#readme",
+  "bugs": {
+    "url": "https://github.com/mohitkumartoshniwal/algohatch/issues"
+  }
+}

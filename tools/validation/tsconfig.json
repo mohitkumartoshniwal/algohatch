@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    // Validation checks public declarations without producing runtime output.
+    "noEmit": true
+  },
+  "include": ["src/**/*.ts"]
+}

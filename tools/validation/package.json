@@ -1,0 +1,14 @@
+{
+  "name": "algohatch-validation",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "algohatch": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  }
+}
