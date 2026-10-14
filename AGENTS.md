@@ -106,9 +106,10 @@ its public ESM imports. Neither command publishes anything.
 
 ## Current Checkpoint
 
-Stage 0 JavaScript storage and complexity fundamentals are research-audited and documented in
-`docs/fundamentals.md`; owner review is pending. Arrays and `DynamicArray<T>` follow. Do not add
-another data structure before the foundation review.
+Stage 0 JavaScript storage and complexity fundamentals are research-audited and owner-reviewed.
+Arrays and the `DynamicArray<T>` specification checkpoint follow. Prepare the contract, diagrams,
+complexity, trade-offs, and tests, then stop before the concrete implementation for the owner's
+learning exercise.
 
 No data structure is public on `main`. The first planned implementation is `DynamicArray<T>` after
 the foundation review.
@@ -120,7 +121,8 @@ Before continuing, read:
 - `docs/fundamentals.md`
 - `docs/tooling.md`
 
-The next checkpoint is owner review of the fundamentals page, not another implementation.
+The next checkpoint is the Array and `DynamicArray<T>` specification-and-tests exercise, not a
+finished implementation.
 
 ## Working Rules
 
@@ -134,3 +136,7 @@ The next checkpoint is owner review of the fundamentals page, not another implem
 7. Run `pnpm release:check` before requesting any package release.
 8. Do not publish, push, tag, release, or deploy without explicit owner approval.
 9. Follow the owner-implemented learning loop; do not preempt the owner's implementation exercise.
+10. Treat foundation documents as living guidance and update them when later topics expose missing
+    or inaccurate assumptions.
+11. Use Big O in practical API tables and qualify each cost as worst-case, expected, or amortized;
+    reserve tighter notation for explanations where it adds real value.

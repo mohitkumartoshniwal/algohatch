@@ -18,6 +18,12 @@ states.
 5. Align the documentation and diagrams with the reviewed code, run the full checks, and only then
    consider the topic complete.
 
+Foundation pages are living documentation. Revisit them when later implementation work exposes a
+missing assumption, a clearer explanation, or behavior that the current foundation did not cover.
+
+Public complexity tables use familiar Big-O notation and identify whether each cost is worst-case,
+expected, or amortized. Use tighter notation only when it materially helps the explanation.
+
 ## Stage 0: Language And Complexity Foundations
 
 Priority: Essential

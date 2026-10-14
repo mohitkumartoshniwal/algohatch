@@ -1,11 +1,11 @@
 # AlgoHatch Progress
 
-Last updated: 2026-10-11
+Last updated: 2026-10-14
 
 ## Active Learning Checkpoint
 
-Review the research-audited JavaScript storage and complexity fundamentals before designing the
-Array topic or the `DynamicArray<T>` contract.
+Prepare the Array topic and the `DynamicArray<T>` contract, diagrams, complexity table, trade-offs,
+and failing tests without writing the concrete implementation.
 
 Future implementation topics use a test-driven learning checkpoint: the agent prepares the
 contract, diagrams, expected complexity, trade-offs, and tests; the owner then writes the concrete
@@ -23,15 +23,16 @@ later reconsideration after its prerequisites are understood.
 - Connected the package metadata to the AlgoHatch GitHub repository.
 - Added the practical foundations source of truth with examples and diagrams.
 - Completed the private Fundamentals research audit and revised the public draft.
+- Completed owner review of the fundamentals on 2026-10-14.
 
 ## Learning Progress
 
 | Stage | Topic | Implementation | Owner review |
 |---|---|---|---|
-| 0 | JavaScript storage fundamentals | Documented and research-audited | Pending |
-| 0 | Complexity fundamentals | Documented and research-audited | Pending |
-| 1 | Arrays | Not started | Not started |
-| 1 | Dynamic array | Planned | Not started |
+| 0 | JavaScript storage fundamentals | Documented and research-audited | Reviewed |
+| 0 | Complexity fundamentals | Documented and research-audited | Reviewed |
+| 1 | Arrays | Specification checkpoint in progress | In progress |
+| 1 | Dynamic array | Contract and tests next | Not started |
 | 2 | Linked lists | Not started | Not started |
 | 3 | Stack | Not started | Not started |
 | 3 | Queue | Not started | Not started |
@@ -39,6 +40,5 @@ later reconsideration after its prerequisites are understood.
 
 ## Next Checkpoint
 
-Review `docs/fundamentals.md` for clarity and correctness. The owner should be able to explain its
-review questions before the agent prepares the Array topic, `DynamicArray<T>` contract, and failing
-tests for the owner's implementation exercise.
+The agent prepares the Array topic, `DynamicArray<T>` contract, diagrams, expected Big-O costs,
+trade-offs, and failing tests. The owner then writes the concrete implementation by hand.
