@@ -107,12 +107,12 @@ its public ESM imports. Neither command publishes anything.
 ## Current Checkpoint
 
 Stage 0 JavaScript storage and complexity fundamentals are research-audited and owner-reviewed.
-Arrays and the `DynamicArray<T>` specification checkpoint follow. Prepare the contract, diagrams,
-complexity, trade-offs, and tests, then stop before the concrete implementation for the owner's
-learning exercise.
+The Array and `DynamicArray<T>` contract, diagrams, complexity, trade-offs, and tests are prepared
+on `array-draft`. The intentionally incomplete class shell is now the owner's implementation
+exercise. Do not fill it in unless the owner explicitly asks for implementation help.
 
-No data structure is public on `main`. The first planned implementation is `DynamicArray<T>` after
-the foundation review.
+No data structure is public on `main`. The first planned implementation is the owner-written
+`DynamicArray<T>` currently specified on `array-draft`.
 
 Before continuing, read:
 
@@ -121,8 +121,8 @@ Before continuing, read:
 - `docs/fundamentals.md`
 - `docs/tooling.md`
 
-The next checkpoint is the Array and `DynamicArray<T>` specification-and-tests exercise, not a
-finished implementation.
+The next checkpoint is owner implementation of `DynamicArray<T>`, followed by agent review and
+diagram alignment.
 
 ## Working Rules
 

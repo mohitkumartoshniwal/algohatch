@@ -5,16 +5,17 @@ track. It develops each topic from understandable foundations into documented, t
 
 ## Current Learning Path
 
-The active checkpoint is JavaScript storage and complexity fundamentals. Arrays and a practical
-`DynamicArray<T>` follow after the fundamentals review, then linked lists, stacks, queues, and
-deques.
+The JavaScript storage and complexity foundations are reviewed. The active checkpoint is the
+owner's implementation of `DynamicArray<T>` from its prepared contract and tests. Linked lists,
+stacks, queues, and deques follow after the Array topic is complete.
 
 - [Practical foundations](docs/fundamentals.md)
+- [Arrays and DynamicArray](docs/data-structures/array.md)
 - [Roadmap](curriculum/roadmap.md)
 - [Current progress](curriculum/progress.md)
 
-No data structure is public yet. That is intentional: the repository starts with the concepts and
-tooling that later implementations will rely on.
+No data structure is release-ready yet. `DynamicArray<T>` has a public contract and an intentionally
+incomplete class shell on its topic branch so the owner can implement it by hand.
 
 ## Topic Structure
 

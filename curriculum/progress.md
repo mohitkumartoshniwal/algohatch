@@ -4,8 +4,8 @@ Last updated: 2026-10-14
 
 ## Active Learning Checkpoint
 
-Prepare the Array topic and the `DynamicArray<T>` contract, diagrams, complexity table, trade-offs,
-and failing tests without writing the concrete implementation.
+Implement `DynamicArray<T>` by hand from the prepared contract, diagrams, complexity table,
+trade-offs, and failing tests.
 
 Future implementation topics use a test-driven learning checkpoint: the agent prepares the
 contract, diagrams, expected complexity, trade-offs, and tests; the owner then writes the concrete
@@ -31,8 +31,8 @@ later reconsideration after its prerequisites are understood.
 |---|---|---|---|
 | 0 | JavaScript storage fundamentals | Documented and research-audited | Reviewed |
 | 0 | Complexity fundamentals | Documented and research-audited | Reviewed |
-| 1 | Arrays | Specification checkpoint in progress | In progress |
-| 1 | Dynamic array | Contract and tests next | Not started |
+| 1 | Arrays | Specification and tests prepared | Pending implementation review |
+| 1 | Dynamic array | Owner implementation exercise | In progress |
 | 2 | Linked lists | Not started | Not started |
 | 3 | Stack | Not started | Not started |
 | 3 | Queue | Not started | Not started |
@@ -40,5 +40,6 @@ later reconsideration after its prerequisites are understood.
 
 ## Next Checkpoint
 
-The agent prepares the Array topic, `DynamicArray<T>` contract, diagrams, expected Big-O costs,
-trade-offs, and failing tests. The owner then writes the concrete implementation by hand.
+The owner implements `DynamicArray<T>` in
+`packages/algohatch/src/array/dynamic-array.ts` until the prepared tests pass. The agent then reviews
+the implementation and aligns the diagrams with its real private fields.

@@ -90,8 +90,11 @@ try {
     `import assert from "node:assert/strict";
 
 const root = await import("algohatch");
-assert.deepEqual(Object.keys(root), []);
+assert.deepEqual(Object.keys(root), ["DynamicArray"]);
 
+await assert.rejects(import("algohatch/array"), {
+  code: "ERR_PACKAGE_PATH_NOT_EXPORTED",
+});
 await assert.rejects(import("algohatch/queue"), {
   code: "ERR_PACKAGE_PATH_NOT_EXPORTED",
 });

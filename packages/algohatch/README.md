@@ -6,11 +6,12 @@ trade-offs.
 
 ## Status
 
-AlgoHatch is currently preparing its foundations and first data structure. The package is not yet
-published and intentionally has no public data-structure exports.
+AlgoHatch has completed its foundation review and is preparing its first data structure. The
+package is not yet published.
 
-The first planned implementation is `DynamicArray<T>` after the JavaScript storage and complexity
-fundamentals are reviewed.
+The `DynamicArray<T>` contract and tests are ready, but its class is intentionally unimplemented so
+the owner can complete it as a learning exercise. This branch is not release-ready until those
+tests pass.
 
 ## Runtime
 
