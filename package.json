@@ -24,10 +24,10 @@
     "@arethetypeswrong/cli": "^0.18.5",
     "@biomejs/biome": "^2.2.4",
     "@changesets/cli": "^3.0.3",
-    "@types/node": "^24.7.0",
+    "@types/node": "^26.6.5",
     "publint": "^0.3.25",
-    "tsdown": "^0.15.4",
-    "typescript": "^5.9.3",
-    "vitest": "^4.0.0"
+    "tsdown": "^0.23.1",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.4"
   }
 }
