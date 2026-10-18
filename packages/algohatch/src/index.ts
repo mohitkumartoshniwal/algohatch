@@ -1,2 +1,2 @@
-export { DynamicArray } from "./array/dynamic-array.js";
-export type { DynamicArrayContract } from "./array/dynamic-array-contract.js";
+// Prepared exercises stay internal until their implementations pass review.
+export {};

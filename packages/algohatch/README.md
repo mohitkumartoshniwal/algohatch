@@ -6,12 +6,11 @@ trade-offs.
 
 ## Status
 
-AlgoHatch has completed its foundation review and is preparing its first data structure. The
-package is not yet published.
+AlgoHatch has completed its foundation review and prepared a research-audited exercise curriculum.
+The package is not yet published.
 
-The `DynamicArray<T>` contract and tests are ready, but its class is intentionally unimplemented so
-the owner can complete it as a learning exercise. This branch is not release-ready until those
-tests pass.
+Prepared contracts, commented source shells, and skipped tests remain internal until the owner
+activates and implements a topic. No unfinished exercise is exported from the package root.
 
 ## Runtime
 

@@ -11,9 +11,15 @@ clear expected complexity, and diagrams that explain real code.
 
 ## Repository Structure
 
-- `packages/algohatch`: the public npm package, source code, and tests.
-- `docs/data-structures`: one practical source-of-truth page per data structure.
+- `packages/algohatch/src/data-structures/<topic>`: one ADT family's README, contract, and shared
+  tests. A family with multiple independently named implementations uses one
+  `<implementation>/README.md` and source file per implementation; a single-implementation topic
+  stays flat.
+- `packages/algohatch/src/algorithms/<family>`: algorithm-family guidance and one source file per
+  algorithm, with explicit contracts and colocated tests.
 - `docs/fundamentals.md`: language, storage, and complexity concepts shared by later topics.
+- `docs/runtime`: durable runtime learning notes; relevant topic pages link rather than duplicate.
+- `docs/exercises.md`: lifecycle for prepared, active, reviewed, and public exercises.
 - `docs/architecture`: durable project-level decisions.
 - `docs/tooling.md`: tools, configuration choices, and the validation flow.
 - `curriculum`: topic roadmap and current learning checkpoint.
@@ -37,13 +43,21 @@ need and owner agreement.
 
 ## Documentation Pattern
 
-Keep one primary document per topic. It should cover purpose, contract, API, operation diagrams,
-implementations, correctness rules, complexity, trade-offs, shared tests, traceability, and current
-status. Split a topic only after one page becomes genuinely difficult to navigate.
+Keep an ADT family's primary `README.md` beside its contract and shared tests. It should cover the
+purpose, contract, common behavior, implementation comparison, shared complexity, and links to its
+implementations. Every independently named implementation that may become a public class gets a
+kebab-case child folder matching the class name, containing its source and GitHub-rendered
+`README.md`; place focused tests there when implementation-specific behavior exists. Keep a
+single-implementation topic flat. Unrelated structures and algorithms must not be bundled into
+catch-all files.
 
 Mermaid is maintained as documentation, not generated from TypeScript. Every implementation
 diagram must name real classes or fields and include a nearby mapping to the source file and tests
 that verify the depicted behavior. Review that mapping whenever the implementation changes.
+
+V8 learning belongs in `docs/runtime/v8.md`. Keep only a short connection in a data-structure page.
+Date each runtime chapter, distinguish V8 choices from ECMAScript guarantees, cite official primary
+sources, and re-verify the chapter when its connected topic changes materially.
 
 ## Mandatory Research Gate
 
@@ -61,30 +75,35 @@ Research completion is required before a topic is marked review-ready. If the ig
 guide is unavailable, stop and ask the owner for the private source list rather than silently
 skipping the gate.
 
-Do not put source names, links, excerpts, or license notes in tracked documentation. Private
-research material belongs only under the ignored `.internal` directory.
+General research source names, excerpts, and license notes remain private under `.internal`.
+Approved V8 runtime chapters are the narrow exception: they may name and link to official V8
+primary sources and state concise verified license context, but must use original AlgoHatch prose
+and diagrams and must not reproduce source material or benchmark results.
 
 ## Testing Expectations
 
 - Run every compatible implementation through the same contract suite.
 - Add focused tests for implementation-specific mechanics and transitions.
+- Keep each test beside the topic it verifies under `packages/algohatch/src`.
 - Validate root exports through `tools/validation`.
 - Scale additional tests to the behavior and package surface changed.
 
-## Owner-Implemented Learning Loop
+## Prepared Curriculum And Owner Learning Loop
 
-For each new data structure or algorithm, work in two checkpoints on a topic branch:
+The current curriculum is prepared before owner implementation. For each structure or algorithm:
 
-1. The agent researches the topic and prepares the practical contract, proposed public API,
-   diagrams, expected complexity, trade-offs, and tests.
-2. Stop before writing the concrete production implementation. The tests may intentionally fail
-   at this checkpoint and the branch must not be merged into `main` yet.
-3. The owner writes the implementation by hand as the learning exercise.
-4. The agent reviews the owner's code, explains any issues, runs validation, and updates diagrams
-   or documentation to match the reviewed implementation.
+1. Research the topic and prepare its practical contract, proposed API, diagrams, complexity,
+   trade-offs, commented source shell, and tests.
+2. Keep the suite skipped and the declarations out of `src/index.ts` while the topic is prepared.
+   The repository checks must remain green.
+3. When the owner activates a topic, recheck older research, remove `.skip`, and expect failures
+   until the owner writes the implementation.
+4. Review the owner's code, run validation, and align diagrams with the real implementation.
+5. Export only reviewed behavior, add external package validation and a Changeset, then consider it
+   public.
 
-An agent may create contract types and test scaffolding needed to define the exercise, but must not
-provide the finished implementation unless the owner explicitly changes this workflow for a topic.
+An agent may create contracts and commented source shells but must not provide finished
+implementations unless the owner explicitly changes this workflow for a topic.
 
 ## Commands
 
@@ -107,22 +126,26 @@ its public ESM imports. Neither command publishes anything.
 ## Current Checkpoint
 
 Stage 0 JavaScript storage and complexity fundamentals are research-audited and owner-reviewed.
-The Array and `DynamicArray<T>` contract, diagrams, complexity, trade-offs, and tests are prepared
-on `array-draft`. The intentionally incomplete class shell is now the owner's implementation
-exercise. Do not fill it in unless the owner explicitly asks for implementation help.
+The comprehensive catalog in `curriculum/catalog.md` has colocated draft contracts, incomplete
+shells, local guidance, and skipped tests. Every concrete exercise from Dynamic Array through the
+selected advanced electives has a topic research audit and detailed specification. External-memory
+and succinct structures are catalog ideas without source shells. Do not add them or expand the
+catalog unless the owner approves a concrete practical contract.
 
-No data structure is public on `main`. The first planned implementation is the owner-written
-`DynamicArray<T>` currently specified on `array-draft`.
+No data structure is public. `DynamicArray<T>` and later exercises remain dormant until activation.
 
 Before continuing, read:
 
 - `curriculum/roadmap.md`
+- `curriculum/catalog.md`
 - `curriculum/progress.md`
+- `docs/exercises.md`
 - `docs/fundamentals.md`
+- `docs/runtime/v8.md`
 - `docs/tooling.md`
 
-The next checkpoint is owner implementation of `DynamicArray<T>`, followed by agent review and
-diagram alignment.
+The next implementation checkpoint is `DynamicArray<T>`. The finite curriculum is specified but
+remains dormant; do not begin a later implementation before its prerequisites and owner checkpoint.
 
 ## Working Rules
 
@@ -135,8 +158,10 @@ diagram alignment.
    normally need one.
 7. Run `pnpm release:check` before requesting any package release.
 8. Do not publish, push, tag, release, or deploy without explicit owner approval.
-9. Follow the owner-implemented learning loop; do not preempt the owner's implementation exercise.
+9. Follow the prepared-exercise lifecycle; keep dormant suites skipped and declarations internal.
 10. Treat foundation documents as living guidance and update them when later topics expose missing
     or inaccurate assumptions.
 11. Use Big O in practical API tables and qualify each cost as worst-case, expected, or amortized;
     reserve tighter notation for explanations where it adds real value.
+12. Keep V8 runtime notes durable, dated, sourced from official primary material, and clearly
+    separate from language guarantees and public package contracts.

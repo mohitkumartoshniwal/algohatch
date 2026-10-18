@@ -50,14 +50,20 @@ Decision: use tsdown to build the package and generate declarations.
 
 Rationale: tsdown is designed for TypeScript library builds and can infer useful defaults from package and TypeScript configuration.
 
-## One Primary Document Per Topic
+## Colocated Topic Folders
 
-Decision: keep each topic's behavior contract, public API, implementation explanation, diagrams,
-complexity, and traceability in one primary Markdown document.
+Decision: keep each ADT family's primary README, explicit contract, and shared tests in one folder
+under `packages/algohatch/src/data-structures`. Give every independently named implementation that
+may become a public class a kebab-case child folder containing its source and GitHub-rendered
+`README.md`; keep a single-implementation topic flat. Put each algorithm in its own source file
+within its family folder. Keep only shared foundations, runtime notes, tooling, and architecture in
+`docs`.
 
-Rationale: these remain distinct sections, but a small learning-focused library is easier to
-navigate when readers do not have to assemble one topic from several folder trees. Split a topic
-only when the single page becomes difficult to use.
+Rationale: readers should not have to assemble one topic from separate documentation, source, and
+test trees. GitHub automatically renders the relevant implementation README when its folder opens.
+Compatible implementations still share one ADT contract and shared behavior suite, while their
+mechanics, diagrams, and future focused tests have clear ownership. Internal folder nesting does not
+change the package's root-only npm API.
 
 ## Vitest for Tests
 
@@ -89,15 +95,17 @@ status.
 Rationale: one structure keeps the curriculum understandable and can also guide a short video
 without maintaining separate scripts or video-specific rules.
 
-## Owner-Implemented Learning Checkpoint
+## Prepared Curriculum Before Owner Implementation
 
-Decision: prepare each topic's research, behavior contract, proposed API, diagrams, complexity,
-trade-offs, and tests before the concrete implementation, then pause so the owner can implement it
-by hand. Review and validation follow the owner's implementation.
+Decision: prepare the finite curriculum catalog before owner implementation. Dormant topics include
+research, proposed contracts, commented source shells, documentation, and skipped tests. They stay
+outside root exports. Activate and implement one coherent topic at a time, then review it before
+making it public.
 
 Rationale: AlgoHatch is both a usable library and a learning project. Tests define a concrete
-exercise while manual implementation gives the owner direct practice. Keeping the incomplete
-checkpoint on a topic branch prevents intentionally failing tests from reaching `main`.
+exercise while manual implementation gives the owner direct practice. Skipped dormant suites keep
+normal validation useful while allowing the wider curriculum to be prepared in advance. Keeping
+unfinished declarations internal prevents accidental publication.
 
 ## Public Implementation Choice
 

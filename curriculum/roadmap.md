@@ -5,24 +5,33 @@ abstractions. Implementation remains incremental: complete and review one small 
 starting the next.
 
 Every topic begins with the private research workflow in `.internal/research-notes.md`. Research,
-public documentation, test design, owner implementation, and review are separate completion
-states.
+exercise preparation, activation, owner implementation, review, and publication are separate
+states. The finite preparation target is listed in `curriculum/catalog.md`.
 
 ## Topic Workflow
 
 1. Research and define the practical behavior contract.
-2. Prepare the proposed API, diagrams, complexity table, trade-offs, and tests.
-3. Pause with a deliberately incomplete topic branch so the owner can implement the solution by
-   hand. Do not merge this checkpoint into `main`.
-4. Review the owner's implementation against the contract and tests.
-5. Align the documentation and diagrams with the reviewed code, run the full checks, and only then
-   consider the topic complete.
+2. Prepare the proposed API, diagrams, complexity table, trade-offs, commented shell, and tests in
+   one colocated topic folder.
+3. Keep the suite skipped and the topic outside root exports while preparing the wider curriculum.
+4. Activate one coherent topic, recheck its research, and let the owner implement it by hand.
+5. Review the implementation against the contract and tests.
+6. Align documentation and diagrams, run full checks, and export only reviewed behavior.
 
 Foundation pages are living documentation. Revisit them when later implementation work exposes a
 missing assumption, a clearer explanation, or behavior that the current foundation did not cover.
 
 Public complexity tables use familiar Big-O notation and identify whether each cost is worst-case,
 expected, or amortized. Use tighter notation only when it materially helps the explanation.
+
+## Runtime Learning Track
+
+The durable V8 learning track lives in `docs/runtime/v8.md`. Relevant data-structure pages include
+only a short runtime connection and link to the detailed chapter. V8 notes explain production
+engineering choices without treating them as ECMAScript guarantees or AlgoHatch API requirements.
+
+Add and re-verify a V8 chapter when it materially supports the active topic. Do not force a runtime
+section onto a topic with no useful connection.
 
 ## Stage 0: Language And Complexity Foundations
 
@@ -54,9 +63,9 @@ Learn in this order:
 6. Why append can be amortized `O(1)`
 7. Typed arrays and fixed-length storage where useful for comparison
 
-Planned owner implementation: a practical `DynamicArray<T>` with explicit size, capacity, growth,
-indexed access, insertion, removal, iteration, and snapshots. The agent first prepares its contract
-and tests without supplying the finished implementation.
+Planned owner implementation: a practical `DynamicArray<T>` with public logical size, private
+capacity and growth, indexed access, insertion, removal, iteration, and snapshots. The agent first
+prepares its contract and tests without supplying the finished implementation.
 
 Done when: the owner-written implementation passes the prepared tests and the topic document,
 diagrams, correctness rules, and trade-offs have been reviewed.
@@ -132,7 +141,8 @@ Representations: directed/undirected, weighted/unweighted, adjacency lists, adja
 and edge lists.
 
 Algorithms: BFS, DFS, components, cycle detection, bipartite checking, topological sorting,
-Dijkstra, Bellman-Ford, Floyd-Warshall, Kruskal, Prim, and strongly connected components.
+Dijkstra, Bellman-Ford, Floyd-Warshall, Kruskal, Prim, and strongly connected components. Advanced
+exercises add A*, Edmonds-Karp maximum flow, and Hopcroft-Karp bipartite matching.
 
 ## Stage 11: Algorithmic Patterns
 

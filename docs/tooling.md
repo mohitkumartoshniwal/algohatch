@@ -95,11 +95,16 @@ a measured consumer need justifies introducing another permanent public import p
 
 ## Vitest
 
-Vitest runs files under `packages/algohatch/test` whose names end in `.test.ts`. The package uses:
+Vitest runs colocated files under `packages/algohatch/src` whose names end in `.test.ts`. The
+package uses:
 
-- A public-surface check while the package intentionally has no data-structure exports
-- Shared contract tests for behavior every implementation must satisfy
+- A public-surface check while prepared exercises intentionally remain unexported
+- Skipped exercise suites that compile during curriculum preparation
+- Activated shared contract tests for behavior every compatible implementation must satisfy
 - Focused tests for implementation-specific transitions and correctness rules
+
+Skipped suites are temporary curriculum staging. Activate one topic at a time; never treat a
+skipped test as evidence of working behavior.
 
 The `threads` pool allows test files to run in worker threads. Tests should not depend on shared
 mutable global state or execution order.

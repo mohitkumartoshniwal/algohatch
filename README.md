@@ -5,17 +5,20 @@ track. It develops each topic from understandable foundations into documented, t
 
 ## Current Learning Path
 
-The JavaScript storage and complexity foundations are reviewed. The active checkpoint is the
-owner's implementation of `DynamicArray<T>` from its prepared contract and tests. Linked lists,
-stacks, queues, and deques follow after the Array topic is complete.
+The JavaScript storage and complexity foundations are reviewed. The finite exercise curriculum is
+research-audited and prepared for owner review. Source shells and tests remain dormant and
+non-public until their topic is activated.
 
 - [Practical foundations](docs/fundamentals.md)
-- [Arrays and DynamicArray](docs/data-structures/array.md)
+- [Arrays and DynamicArray](packages/algohatch/src/data-structures/array/dynamic-array/README.md)
+- [V8 runtime notes](docs/runtime/v8.md)
+- [Exercise lifecycle](docs/exercises.md)
+- [Comprehensive catalog](curriculum/catalog.md)
 - [Roadmap](curriculum/roadmap.md)
 - [Current progress](curriculum/progress.md)
 
-No data structure is release-ready yet. `DynamicArray<T>` has a public contract and an intentionally
-incomplete class shell on its topic branch so the owner can implement it by hand.
+No data structure is release-ready yet. `DynamicArray<T>` has a proposed contract, skipped tests,
+and an intentionally incomplete internal class shell for later owner implementation.
 
 ## Topic Structure
 
@@ -28,17 +31,21 @@ without a separate script.
 flowchart LR
     Foundations["Required foundations"] --> Contract["Behavior contract"]
     Contract --> API["TypeScript API"]
-    API --> Implementations["Public implementations"]
-    Implementations --> Tests["Shared and focused tests"]
-    Tests --> Package["algohatch package"]
-    Implementations --> Guide["Mermaid implementation guide"]
+    API --> Prepared["Commented shell and skipped tests"]
+    Prepared --> Active["Owner implementation"]
+    Active --> Review["Review and passing tests"]
+    Review --> Package["Intentional root export"]
+    Active --> Guide["Aligned Mermaid implementation guide"]
 ```
 
 ## Repository
 
-- `packages/algohatch`: the public npm package, source code, and tests.
-- `docs/data-structures`: one source-of-truth document for each implemented data structure.
+- `packages/algohatch/src/data-structures`: ADT family READMEs/contracts/shared tests, with a child
+  README and source folder for every independently named implementation.
+- `packages/algohatch/src/algorithms`: one source file per algorithm, family contracts, guidance,
+  and colocated tests.
 - `docs/fundamentals.md`: shared concepts needed by later structures and algorithms.
+- `docs/runtime`: maintained runtime learning notes linked from relevant topics.
 - `docs/architecture`: repository-wide decisions.
 - `docs/tooling.md`: what each development tool and configuration does.
 - `curriculum`: topic order and progress.
